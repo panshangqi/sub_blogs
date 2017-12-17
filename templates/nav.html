@@ -1,0 +1,19 @@
+<ul class="nav nav-tabs">
+    {% set isactive = 'class=active'%}
+    {% if request.path == '/' %}
+    <li name="home_page" {{ isactive }}><a href="/">我的博文</a></li>
+    {% else %}
+    <li name="home_page" ><a href="/">我的博文</a></li>
+    {% endif %}
+    <li name="photo"><a href="#">相册</a></li>
+    <li name="fellow"><a href="#">好友</a></li>
+    
+    {% if request.path == '/essay' %}
+    <li name="new_essay" {{ isactive }}><a href="/essay">新随笔</a></li>
+    {% else %}
+    <li name="new_essay"><a href="/essay">新随笔</a></li>
+    {% endif %}
+    
+    <li name="settings"><a href="#">管理</a></li>
+    <li name="relation"><a href="#">与我相关</a></li>
+</ul>

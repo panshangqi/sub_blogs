@@ -1,0 +1,30 @@
+终端管理密码 106363
+//创建用户信息
+create table users_info(
+    user_id mediumint(10) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(40) NOT NULL,
+    password VARCHAR(40) NOT NULL,
+    PRIMARY KEY (user_id)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+//修改root密码：
+# mysqladmin -u root -p password "test123"
+Enter password: 【输入原来的密码】
+
+create table users_info(
+    username VARCHAR(40) NOT NULL,
+    password VARCHAR(40) NOT NULL
+);
+
+//博客信息库
+CREATE TABLE about_blog (
+    blog_id mediumint(10) NOT NULL AUTO_INCREMENT,
+    blog_user_id mediumint(10) NOT NULL,
+    blog_uuid varchar(40) NOT NULL,
+    blog_time int NOT NULL,
+    blog_title varchar(128) NOT NULL,
+    blog_summary Text,
+    blog_article LongText,
+    PRIMARY KEY (blog_id)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+insert into about_blog(blog_user_id,blog_title,blog_article) values(1,'ceshi','zehng')

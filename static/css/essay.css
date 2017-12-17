@@ -1,0 +1,18 @@
+.tinymce_box{
+    width:890px;
+    height:400px;
+    margin: 0 auto;
+}
+.essay_title_box{
+    margin-top: 10px;
+}
+.essay_article_box{
+    margin-top: 10px;
+}
+.post_box{
+    margin-top: 5px; 
+}
+.post_box button{
+    float:left;
+    margin-right: 10px;
+}

@@ -1,0 +1,9 @@
+.tip_box{
+    width:90%;
+    height:50px;
+    line-height: 50px;
+    margin: 40px 15px 20px 15px;
+    padding-left: 20px;
+    border:dashed 1px #888;
+    font-size:16px;
+}

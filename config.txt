@@ -1,0 +1,19 @@
+tornado install:
+$ curl -L -O https://github.com/facebook/tornado/archive/v3.1.0.tar.gz
+$ tar xvzf v3.1.0.tar.gz
+$ cd tornado-3.1.0
+$ python setup.py build
+$ sudo python setup.py install
+
+mysql install:
+ apt-get install mysql-server
+apt-get install python-mysqldb
+
+how to connect remote mysql:
+netstat -an | grep 3306
+->  tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN
+/etc/mysql/my.cnf:
+#bind-address = 127.0.0.1
+/etc/init.d/mysql restart 
+grant all privileges on *.* to 'root'@'%'
+flush privileges

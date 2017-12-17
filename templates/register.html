@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ static_url }}bootstrap/css/bootstrap.min.css">
+
+        <style type="text/css">
+            .sign_box{
+                width:300px;
+                height:370px;
+                margin: 160px auto 0;
+                border: 1px solid #ccc;
+                padding:20px;
+                box-shadow:1px 3px 15px #888888;
+            }
+            .logo img{
+                width:100px;
+            }
+            .space_top{
+                margin-top: 20px;
+            }
+            .space_text_top a{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                display: block;
+                font-size: 12px;
+                color:#337ab7;
+                float:right;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="sign_box">
+            <div class="logo"><img src="{{ static_url }}image/logo.png"></div>
+            <form action="/register" method="post">
+                {{ xsrf_form_html()|safe }}
+                <div class="space_top">
+                    <input type="text" class="form-control" name="username" placeholder="Username" value="{{username}}">
+                </div>
+                <div class="space_top">
+                    <input type="password" class="form-control" name="password" placeholder="Password" value="{{password}}">
+                </div>
+                <div class="space_top">
+                    <input type="password" class="form-control" name="repasswd" placeholder="Repeat">
+                </div>
+                <div class="space_top">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">注 册</button>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script type="text/javascript" src="{{ static_url }}jquery.min.js"></script>
+    <script type="text/javascript" src="{{ static_url }}bootstrap/js/bootstrap.min.js"></script>
+</html>

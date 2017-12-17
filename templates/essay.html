@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+{% extends "base.html" %}
+{% block title %}
+    新随笔
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ static_url }}css/essay.css">
+{% endblock %}
+
+{% block content %}
+    <div class="tinymce_box">
+        <div class="essay_title_box">
+            <strong>标题</strong><br/>
+            <input type="text" class='form-control' id='blog_title'>
+        </div>
+        <div class="essay_article_box">
+            <strong>正文</strong><br/>
+            <div id="blog_article"></div>
+        </div>
+
+        <div class="post_box">
+            <button class="btn btn-primary btn-xs" id="submit">提交</button>
+            <button class="btn btn-primary btn-xs">预览</button>
+            <button class="btn btn-primary btn-xs">取消</button>
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ static_url }}tinymce/js/tinymce/tinymce.min.js"></script>
+<script type="text/javascript" src="{{ static_url }}js/essay.js"></script>
+{% endblock %}

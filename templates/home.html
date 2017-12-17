@@ -1,0 +1,43 @@
+{% extends "base.html" %}  
+{% block title %}主页{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{{ static_url }}css/home.css">
+{% endblock %}
+{% block content %}
+<div class='list_box'>
+    {% for article in article_lists %}
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="cursor:pointer;">
+            <h3 class="panel-title"><a href="/essay_preview?blog_uuid={{ article['blog_uuid'] }}">{{article['blog_title']}}</a></h3>
+        </div>
+        <div class="panel-body">
+            {{article['blog_summary']}}
+        </div>
+        <div class="panel-body">
+            <div class="operator_box">
+                <label class="text-danger"><a href="#">删除</a></label>
+                <label class="text-primary"><a href="#">编辑</a></label>
+                <label class="text-muted">{{ username }}</label>
+                <label class="text-muted">posted @ {{ article['blog_time'] }}</label>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class='pages_box'>
+    {% set isactive = 'class=active' %}
+    <ul class="pagination">
+    <li id="page_left"><a href="#">&laquo;</a></li>
+    <li><a href="#">1</a></li>
+    <li {{ isactive if page_id == 1}}><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li id="page_right"><a href="#">&raquo;</a></li>
+</ul>
+</div>
+{% endblock %}
+{% block script %}
+<script type="text/javascript" src="{{ static_url }}js/home.js"></script>
+
+{% endblock %}

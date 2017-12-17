@@ -1,0 +1,16 @@
+.list_box{
+    width:880px;
+    height: auto;
+    margin: 20px auto;
+}
+.pages_box{
+    width:880px;
+    height:auto;
+    text-align: center;
+    margin: 0 auto;
+}
+.operator_box label{
+    float:right;
+    margin-left: 15px;
+    text-decoration:none;
+}

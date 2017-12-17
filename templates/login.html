@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ static_url }}bootstrap/css/bootstrap.min.css">
+        <script type="text/javascript" src="{{ static_url }}jquery.min.js"></script>
+        <script type="text/javascript" src="{{ static_url }}bootstrap/js/bootstrap.min.js"></script>
+        <style type="text/css">
+            .sign_box{
+                width:300px;
+                height:370px;
+                margin: 160px auto 0;
+                border: 1px solid #ccc;
+                padding:20px;
+                box-shadow:1px 3px 15px #888888;
+            }
+            .logo img{
+                width:100px;
+            }
+            .space_top{
+                margin-top: 20px;
+            }
+            .space_text_top a{
+                margin-top: 20px;
+                display: block;
+                font-size: 12px;
+                color:#337ab7;
+                float:right;
+            }
+            .message_error{
+                margin-top: 5px;
+                text-align: center;
+                color: red;
+            }
+            .clear{ clear:both}
+        </style>
+    </head>
+    <body>
+        <div class="sign_box">
+            <div class="logo"><img src="{{ static_url }}image/logo.png"></div>
+            <form action="/login" method="post">
+                <div class="space_top">
+                    <input type="text" class="form-control" name="username" placeholder="Username" value="{{username}}">
+                </div>
+                <div class="space_top">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <div class="space_text_top">
+                    <a href="#">忘记密码</a>
+                    <div class="clear"></div>
+                </div>
+                <div class="space_top">
+                    <button type="submit" class="btn btn-primary btn-sm btn-block">登 陆</button>
+                </div>
+                <div class="space_text_top">
+                    <a href="/register">立即注册</a>
+                    <div class="clear"></div>
+                </div>
+                <div class="message_error">
+                    {{message}}
+                </div>
+                {{ xsrf_form_html() }}
+            </form>
+        </div>
+    </body>
+
+</html>

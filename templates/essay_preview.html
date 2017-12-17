@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+{% extends "base.html" %}
+{% block title %}
+    新随笔
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ static_url }}css/essay_preview.css">
+{% endblock %}
+
+{% block content %}
+    <div>
+        <div class="title_box"><p class="text-primary">{{ blog_title }}</p></div>
+        <div class="article_box"><p class="text-primary">{{ blog_article }}</p></div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ static_url }}js/essay_preview.js"></script>
+{% endblock %}
